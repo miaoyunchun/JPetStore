@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<package name="/" extends="json-default">
+	
+	<!-- CategoryAction -->
+	
+		<action name="categoryAction" class="com.clps.demo.action.CategoryAction" method="queryProduce">
+			<result name="success">/catalog/Category.jsp</result>
+			<result name="error"></result>
+		</action>
+			<action name="queryItemAction" class="com.clps.demo.action.CategoryAction" method="queryItem">
+			<result name="success">/catalog/Product.jsp</result>
+			<result name="error"></result>
+		</action>
+		<action name="queryQtyAction" class="com.clps.demo.action.CategoryAction" method="queryQty">
+			<result name="success">/catalog/Item.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="queryLikeAction" class="com.clps.demo.action.CategoryAction" method="queryLike">
+			<result name="success">/catalog/SearchProducts.jsp</result>
+			<result name="error">/error/error.jsp</result>
+		</action>
+		
+		<action name="queryItemTwoAction" class="com.clps.demo.action.CategoryAction" method="queryItem">
+			<result name="success">/catalog/Product.jsp</result>
+			<result name="error"></result>
+		</action>
+		<action name="productAction" class="com.clps.demo.action.CategoryAction" method="queryItem">
+			<result name="success">/catalog/Product.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		
+		<!--LoginAction  -->
+		
+		
+		<action name="loginAction" class="com.clps.demo.action.LoginAction" method="login">
+			<result name="success" type="json"></result>	
+		</action>
+		
+		<action name="dropUserAction" class="com.clps.demo.action.LoginAction" method="drop">
+			<result name="success">/account/SignonForm.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="queryInfoByUserAction" class="com.clps.demo.action.LoginAction" method="queryInfoByUser">
+			<result name="success">/account/EditAccountForm.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="saveUserInfomationAction" class="com.clps.demo.action.LoginAction" method="saveUserInfomation">
+			<result name="success">/catalog/Main.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="forgetPasswordAction" class="com.clps.demo.action.LoginAction" method="forgetPassword">
+			<result name="success" type="json"></result>		
+		</action>
+		
+		<action name="updatePasswordAction" class="com.clps.demo.action.LoginAction" method="updatePassword">
+			<result name="success" type="json"></result>		
+		</action>
+		
+		
+		<!-- RegisterAction -->
+		
+		<action name="insertAction" class="com.clps.demo.action.RegisterAction" method="insert">
+			<result name="success">/account/SignonForm.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="checkUsernameAction" class="com.clps.demo.action.RegisterAction" method="checkUsername">
+			<result name="success" type="json"></result>
+		</action>
+		
+		
+		<!-- BannerdataAction -->
+		
+		<action name="queryBannerdataAction" class="com.clps.demo.action.BannerdataAction" method="queryBannerdata">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		
+		</action>
+		
+		<action name="queryProduceAction" class="com.clps.demo.action.BannerdataAction" method="queryProduce">
+			<result name="success" type="json"></result>
+		</action>
+		
+		
+		
+		<!-- ShoppingAction -->
+		
+		<action name="queryShoppingAction" class="com.clps.demo.action.ShoppingAction" method="queryShopping">
+			<result name="success">/cart/Cart.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="saveShoppingAction" class="com.clps.demo.action.ShoppingAction" method="saveShopping">
+			<result  name="success" type="json">
+			<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="saveCountAction" class="com.clps.demo.action.ShoppingAction" method="saveCount">
+			<result name="success" type="json">
+			<param name="root">saveCountMap</param>
+			</result>			
+		</action>
+		
+		<action name="deleteShoppingAction" class="com.clps.demo.action.ShoppingAction" method="deleteShoppingItem">
+			<result  name="success" type="json">
+			<param name="root">deleteResult</param>
+			</result>
+			<result name="error"></result>
+		</action>
+	
+		<action name="queryShoppingTwoAction" class="com.clps.demo.action.ShoppingAction" method="queryShopping">
+			<result name="success">/cart/Checkout.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		
+		<action name="selectqtyAction" class="com.clps.demo.action.ShoppingAction" method="selectqty">
+			<result name="success" type="json"></result>
+			
+		</action>
+		
+		
+		
+		<!-- OrderAction -->
+		
+		
+		<action name="queryAccountAction" class="com.clps.demo.action.OrderAction" method="queryAccount">
+			<result name="success">/order/NewOrderForm.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="queryAccountTwoAction" class="com.clps.demo.action.OrderAction" method="queryAccount">
+			<result name="success">/order/ConfirmOrder.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="saveOrderAction" class="com.clps.demo.action.OrderAction" method="saveOrder">
+			<result name="success">/order/ViewOrder.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="historyOrdersAction" class="com.clps.demo.action.OrderAction" method="historyOrders">
+			<result name="success">/order/ListOrders.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		<action name="saveOrderTwoAction" class="com.clps.demo.action.OrderAction" method="queryOrders">
+			<result name="success">/order/ViewOrder.jsp</result>
+			<result name="error"></result>
+		</action>
+		
+		
+		
+		
+	</package>
+</struts>
